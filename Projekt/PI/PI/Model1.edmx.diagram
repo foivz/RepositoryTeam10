@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26cbc646292d46949af9d1c533fc22af" Name="Diagram1">
+        <EntityTypeShape EntityType="T10_DBModel.BankRacun" Width="1.5" PointX="3.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Biljeske" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Dogadaj" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Email" Width="1.5" PointX="6" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Faks" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Institucija" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Kontakt" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Mjesto" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.MjestoZaposlenja" Width="1.5" PointX="6" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Odvjetnik" Width="1.5" PointX="8.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.OdvjetnikImaOvlastiNaSpisu" Width="1.5" PointX="12.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.OdvjetnikStrankaImajuDogadaj" Width="1.5" PointX="10.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Osoba" Width="1.5" PointX="8.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Ovlast" Width="1.5" PointX="10.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Spis" Width="1.5" PointX="10.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Telefon" Width="1.5" PointX="10.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.TipDogadaja" Width="1.5" PointX="3.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.TipInstitucije" Width="1.5" PointX="1.875" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.TipOsobe" Width="1.5" PointX="6" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.TipPostupka" Width="1.5" PointX="8.25" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.TipSpisa" Width="1.5" PointX="8.25" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Uloga" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.UlogaKontakta" Width="1.5" PointX="5.25" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.UlogaKorisnika" Width="1.5" PointX="6" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Zupanija" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="T10_DBModel.FK_MjestoZaposlenja_BankRacun" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Odvjetnik_Biljeske" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Dogadaj_TipDogadaja" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_OdvjetnikStrankaImajuDogadaj_Dogadaj" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Institucija_Mjesto" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Institucija_Mjesto1" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Institucija_TipInstitucije" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_Institucija" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Kontakt_Uloga" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Kontakt_UlogaKontakta" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Mjesto_Zupanija" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Osoba_MjestoZaposlenja" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Odvjetnik_UlogaKorisnika" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_OdvjetnikImaOvlastiNaSpisu_Odvjetnik" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_OdvjetnikStrankaImajuDogadaj_Odvjetnik" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_Odvjetnik" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_OdvjetnikImaOvlastiNaSpisu_Ovlast" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_OdvjetnikImaOvlastiNaSpisu_Spis" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_OdvjetnikStrankaImajuDogadaj_Osoba" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Osoba_TipOsobe" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_Osoba" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_TipPostupka" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_TipSpisa" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.InstitucijaImaKontakt" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.OdvjetnikImaDogadaj" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.OsobaImaEmail" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.OsobaImaTelefon" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.SpisImaDogadaj" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

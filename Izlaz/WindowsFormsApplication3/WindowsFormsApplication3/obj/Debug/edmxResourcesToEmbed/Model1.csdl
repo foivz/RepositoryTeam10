@@ -1,0 +1,764 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="T10_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BankRacun">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="BrojRacuna" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VrstaRacuna" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MjestoZaposlenja" Relationship="Self.FK_MjestoZaposlenja_BankRacun" FromRole="BankRacun" ToRole="MjestoZaposlenja" />
+  </EntityType>
+  <EntityType Name="Biljeske">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Odvjetnik" Relationship="Self.FK_Odvjetnik_Biljeske" FromRole="Biljeske" ToRole="Odvjetnik" />
+  </EntityType>
+  <EntityType Name="Dogadaj">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pocetak" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Kraj" Type="DateTime" Precision="3" />
+    <Property Name="Opis" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Naslov" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tip" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TipDogadaja" Relationship="Self.FK_Dogadaj_TipDogadaja" FromRole="Dogadaj" ToRole="TipDogadaja" />
+    <NavigationProperty Name="OdvjetnikStrankaImajuDogadaj" Relationship="Self.FK_OdvjetnikStrankaImajuDogadaj_Dogadaj" FromRole="Dogadaj" ToRole="OdvjetnikStrankaImajuDogadaj" />
+    <NavigationProperty Name="Odvjetnik" Relationship="Self.OdvjetnikImaDogadaj" FromRole="Dogadaj" ToRole="Odvjetnik" />
+    <NavigationProperty Name="Spis" Relationship="Self.SpisImaDogadaj" FromRole="Dogadaj" ToRole="Spis" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Osoba" Relationship="Self.OsobaImaEmail" FromRole="Email" ToRole="Osoba" />
+  </EntityType>
+  <EntityType Name="Faks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Broj" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Institucija">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Adresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipInstitucije" Type="Int32" Nullable="false" />
+    <Property Name="Mjesto" Type="Int32" Nullable="false" />
+    <Property Name="Faks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Mjesto1" Relationship="Self.FK_Institucija_Mjesto" FromRole="Institucija" ToRole="Mjesto" />
+    <NavigationProperty Name="Mjesto2" Relationship="Self.FK_Institucija_Mjesto1" FromRole="Institucija" ToRole="Mjesto" />
+    <NavigationProperty Name="TipInstitucije1" Relationship="Self.FK_Institucija_TipInstitucije" FromRole="Institucija" ToRole="TipInstitucije" />
+    <NavigationProperty Name="Spis" Relationship="Self.FK_Spis_Institucija" FromRole="Institucija" ToRole="Spis" />
+    <NavigationProperty Name="Kontakt" Relationship="Self.InstitucijaImaKontakt" FromRole="Institucija" ToRole="Kontakt" />
+  </EntityType>
+  <EntityType Name="Kontakt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prezime" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Adresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Uloga" Type="Int32" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Uloga1" Relationship="Self.FK_Kontakt_Uloga" FromRole="Kontakt" ToRole="Uloga" />
+    <NavigationProperty Name="UlogaKontakta" Relationship="Self.FK_Kontakt_UlogaKontakta" FromRole="Kontakt" ToRole="UlogaKontakta" />
+    <NavigationProperty Name="Institucija" Relationship="Self.InstitucijaImaKontakt" FromRole="Kontakt" ToRole="Institucija" />
+  </EntityType>
+  <EntityType Name="Mjesto">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Zupanija" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Institucija" Relationship="Self.FK_Institucija_Mjesto" FromRole="Mjesto" ToRole="Institucija" />
+    <NavigationProperty Name="Institucija1" Relationship="Self.FK_Institucija_Mjesto1" FromRole="Mjesto" ToRole="Institucija" />
+    <NavigationProperty Name="Zupanija1" Relationship="Self.FK_Mjesto_Zupanija" FromRole="Mjesto" ToRole="Zupanija" />
+  </EntityType>
+  <EntityType Name="MjestoZaposlenja">
+    <Key>
+      <PropertyRef Name="OIB" />
+    </Key>
+    <Property Name="OIB" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Naziv" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sjediste" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Faks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WebStranica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RacunBanka" Type="Int32" Nullable="false" />
+    <Property Name="MjestoID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BankRacun" Relationship="Self.FK_MjestoZaposlenja_BankRacun" FromRole="MjestoZaposlenja" ToRole="BankRacun" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK_Osoba_MjestoZaposlenja" FromRole="MjestoZaposlenja" ToRole="Osoba" />
+  </EntityType>
+  <EntityType Name="Odvjetnik">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prezime" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Adresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Uloga" Type="Int32" Nullable="false" />
+    <Property Name="KorisnickoIme" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lozinka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Biljeska" Type="Int32" />
+    <NavigationProperty Name="Biljeske" Relationship="Self.FK_Odvjetnik_Biljeske" FromRole="Odvjetnik" ToRole="Biljeske" />
+    <NavigationProperty Name="UlogaKorisnika" Relationship="Self.FK_Odvjetnik_UlogaKorisnika" FromRole="Odvjetnik" ToRole="UlogaKorisnika" />
+    <NavigationProperty Name="OdvjetnikImaOvlastiNaSpisu" Relationship="Self.FK_OdvjetnikImaOvlastiNaSpisu_Odvjetnik" FromRole="Odvjetnik" ToRole="OdvjetnikImaOvlastiNaSpisu" />
+    <NavigationProperty Name="OdvjetnikStrankaImajuDogadaj" Relationship="Self.FK_OdvjetnikStrankaImajuDogadaj_Odvjetnik" FromRole="Odvjetnik" ToRole="OdvjetnikStrankaImajuDogadaj" />
+    <NavigationProperty Name="Spis" Relationship="Self.FK_Spis_Odvjetnik" FromRole="Odvjetnik" ToRole="Spis" />
+    <NavigationProperty Name="Dogadaj" Relationship="Self.OdvjetnikImaDogadaj" FromRole="Odvjetnik" ToRole="Dogadaj" />
+  </EntityType>
+  <EntityType Name="OdvjetnikImaOvlastiNaSpisu">
+    <Key>
+      <PropertyRef Name="OdvjetnikID" />
+      <PropertyRef Name="SpisID" />
+      <PropertyRef Name="OvlastID" />
+    </Key>
+    <Property Name="OdvjetnikID" Type="Int32" Nullable="false" />
+    <Property Name="SpisID" Type="Int32" Nullable="false" />
+    <Property Name="OvlastID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Odvjetnik" Relationship="Self.FK_OdvjetnikImaOvlastiNaSpisu_Odvjetnik" FromRole="OdvjetnikImaOvlastiNaSpisu" ToRole="Odvjetnik" />
+    <NavigationProperty Name="Ovlast" Relationship="Self.FK_OdvjetnikImaOvlastiNaSpisu_Ovlast" FromRole="OdvjetnikImaOvlastiNaSpisu" ToRole="Ovlast" />
+    <NavigationProperty Name="Spis" Relationship="Self.FK_OdvjetnikImaOvlastiNaSpisu_Spis" FromRole="OdvjetnikImaOvlastiNaSpisu" ToRole="Spis" />
+  </EntityType>
+  <EntityType Name="OdvjetnikStrankaImajuDogadaj">
+    <Key>
+      <PropertyRef Name="OdvjetnikID" />
+      <PropertyRef Name="StrankaOIB" />
+      <PropertyRef Name="DogadajID" />
+    </Key>
+    <Property Name="OdvjetnikID" Type="Int32" Nullable="false" />
+    <Property Name="StrankaOIB" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DogadajID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dogadaj" Relationship="Self.FK_OdvjetnikStrankaImajuDogadaj_Dogadaj" FromRole="OdvjetnikStrankaImajuDogadaj" ToRole="Dogadaj" />
+    <NavigationProperty Name="Odvjetnik" Relationship="Self.FK_OdvjetnikStrankaImajuDogadaj_Odvjetnik" FromRole="OdvjetnikStrankaImajuDogadaj" ToRole="Odvjetnik" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK_OdvjetnikStrankaImajuDogadaj_Osoba" FromRole="OdvjetnikStrankaImajuDogadaj" ToRole="Osoba" />
+  </EntityType>
+  <EntityType Name="Osoba">
+    <Key>
+      <PropertyRef Name="OIB" />
+    </Key>
+    <Property Name="OIB" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prezime" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Adresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POsoba" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="TipOsobe" Type="Int32" />
+    <NavigationProperty Name="MjestoZaposlenja" Relationship="Self.FK_Osoba_MjestoZaposlenja" FromRole="Osoba" ToRole="MjestoZaposlenja" />
+    <NavigationProperty Name="OdvjetnikStrankaImajuDogadaj" Relationship="Self.FK_OdvjetnikStrankaImajuDogadaj_Osoba" FromRole="Osoba" ToRole="OdvjetnikStrankaImajuDogadaj" />
+    <NavigationProperty Name="TipOsobe1" Relationship="Self.FK_Osoba_TipOsobe" FromRole="Osoba" ToRole="TipOsobe" />
+    <NavigationProperty Name="Spis" Relationship="Self.FK_Spis_Osoba" FromRole="Osoba" ToRole="Spis" />
+    <NavigationProperty Name="Email" Relationship="Self.OsobaImaEmail" FromRole="Osoba" ToRole="Email" />
+    <NavigationProperty Name="Telefon" Relationship="Self.OsobaImaTelefon" FromRole="Osoba" ToRole="Telefon" />
+  </EntityType>
+  <EntityType Name="Ovlast">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ovlast1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="OdvjetnikImaOvlastiNaSpisu" Relationship="Self.FK_OdvjetnikImaOvlastiNaSpisu_Ovlast" FromRole="Ovlast" ToRole="OdvjetnikImaOvlastiNaSpisu" />
+  </EntityType>
+  <EntityType Name="Spis">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Oznaka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tip" Type="Int32" Nullable="false" />
+    <Property Name="Biljeska" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NadlezniSud" Type="Int32" Nullable="false" />
+    <Property Name="DatumPocetka" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DatumZavrsetka" Type="DateTime" Precision="0" />
+    <Property Name="Stranka" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Protustranka" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TipPostupka" Type="Int32" Nullable="false" />
+    <Property Name="KreiraoOdvjetnik" Type="Int32" />
+    <NavigationProperty Name="Institucija" Relationship="Self.FK_Spis_Institucija" FromRole="Spis" ToRole="Institucija" />
+    <NavigationProperty Name="Odvjetnik" Relationship="Self.FK_Spis_Odvjetnik" FromRole="Spis" ToRole="Odvjetnik" />
+    <NavigationProperty Name="OdvjetnikImaOvlastiNaSpisu" Relationship="Self.FK_OdvjetnikImaOvlastiNaSpisu_Spis" FromRole="Spis" ToRole="OdvjetnikImaOvlastiNaSpisu" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK_Spis_Osoba" FromRole="Spis" ToRole="Osoba" />
+    <NavigationProperty Name="TipPostupka1" Relationship="Self.FK_Spis_TipPostupka" FromRole="Spis" ToRole="TipPostupka" />
+    <NavigationProperty Name="TipSpisa" Relationship="Self.FK_Spis_TipSpisa" FromRole="Spis" ToRole="TipSpisa" />
+    <NavigationProperty Name="Dogadaj" Relationship="Self.SpisImaDogadaj" FromRole="Spis" ToRole="Dogadaj" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Telefon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Broj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Osoba" Relationship="Self.OsobaImaTelefon" FromRole="Telefon" ToRole="Osoba" />
+  </EntityType>
+  <EntityType Name="TipDogadaja">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Dogadaj" Relationship="Self.FK_Dogadaj_TipDogadaja" FromRole="TipDogadaja" ToRole="Dogadaj" />
+  </EntityType>
+  <EntityType Name="TipInstitucije">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Institucija" Relationship="Self.FK_Institucija_TipInstitucije" FromRole="TipInstitucije" ToRole="Institucija" />
+  </EntityType>
+  <EntityType Name="TipOsobe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Opis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK_Osoba_TipOsobe" FromRole="TipOsobe" ToRole="Osoba" />
+  </EntityType>
+  <EntityType Name="TipPostupka">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Spis" Relationship="Self.FK_Spis_TipPostupka" FromRole="TipPostupka" ToRole="Spis" />
+  </EntityType>
+  <EntityType Name="TipSpisa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Spis" Relationship="Self.FK_Spis_TipSpisa" FromRole="TipSpisa" ToRole="Spis" />
+  </EntityType>
+  <EntityType Name="Uloga">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uloga1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Kontakt" Relationship="Self.FK_Kontakt_Uloga" FromRole="Uloga" ToRole="Kontakt" />
+  </EntityType>
+  <EntityType Name="UlogaKontakta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Kontakt" Relationship="Self.FK_Kontakt_UlogaKontakta" FromRole="UlogaKontakta" ToRole="Kontakt" />
+  </EntityType>
+  <EntityType Name="UlogaKorisnika">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Odvjetnik" Relationship="Self.FK_Odvjetnik_UlogaKorisnika" FromRole="UlogaKorisnika" ToRole="Odvjetnik" />
+  </EntityType>
+  <EntityType Name="Zupanija">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Mjesto" Relationship="Self.FK_Mjesto_Zupanija" FromRole="Zupanija" ToRole="Mjesto" />
+  </EntityType>
+  <Association Name="FK_MjestoZaposlenja_BankRacun">
+    <End Role="BankRacun" Type="Self.BankRacun" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MjestoZaposlenja" Type="Self.MjestoZaposlenja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BankRacun">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MjestoZaposlenja">
+        <PropertyRef Name="RacunBanka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Odvjetnik_Biljeske">
+    <End Role="Biljeske" Type="Self.Biljeske" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Odvjetnik" Type="Self.Odvjetnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Biljeske">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Odvjetnik">
+        <PropertyRef Name="Biljeska" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dogadaj_TipDogadaja">
+    <End Role="TipDogadaja" Type="Self.TipDogadaja" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Dogadaj" Type="Self.Dogadaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipDogadaja">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Dogadaj">
+        <PropertyRef Name="Tip" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdvjetnikStrankaImajuDogadaj_Dogadaj">
+    <End Role="Dogadaj" Type="Self.Dogadaj" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OdvjetnikStrankaImajuDogadaj" Type="Self.OdvjetnikStrankaImajuDogadaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dogadaj">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OdvjetnikStrankaImajuDogadaj">
+        <PropertyRef Name="DogadajID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Institucija_Mjesto">
+    <End Role="Mjesto" Type="Self.Mjesto" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Institucija" Type="Self.Institucija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mjesto">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institucija">
+        <PropertyRef Name="Mjesto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Institucija_Mjesto1">
+    <End Role="Mjesto" Type="Self.Mjesto" Multiplicity="1" />
+    <End Role="Institucija" Type="Self.Institucija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mjesto">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institucija">
+        <PropertyRef Name="Mjesto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Institucija_TipInstitucije">
+    <End Role="TipInstitucije" Type="Self.TipInstitucije" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Institucija" Type="Self.Institucija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipInstitucije">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institucija">
+        <PropertyRef Name="TipInstitucije" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spis_Institucija">
+    <End Role="Institucija" Type="Self.Institucija" Multiplicity="1" />
+    <End Role="Spis" Type="Self.Spis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institucija">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Spis">
+        <PropertyRef Name="NadlezniSud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontakt_Uloga">
+    <End Role="Uloga" Type="Self.Uloga" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Kontakt" Type="Self.Kontakt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uloga">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kontakt">
+        <PropertyRef Name="Uloga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontakt_UlogaKontakta">
+    <End Role="UlogaKontakta" Type="Self.UlogaKontakta" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Kontakt" Type="Self.Kontakt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UlogaKontakta">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kontakt">
+        <PropertyRef Name="Uloga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mjesto_Zupanija">
+    <End Role="Zupanija" Type="Self.Zupanija" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Mjesto" Type="Self.Mjesto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zupanija">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Mjesto">
+        <PropertyRef Name="Zupanija" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Osoba_MjestoZaposlenja">
+    <End Role="MjestoZaposlenja" Type="Self.MjestoZaposlenja" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MjestoZaposlenja">
+        <PropertyRef Name="OIB" />
+      </Principal>
+      <Dependent Role="Osoba">
+        <PropertyRef Name="POsoba" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Odvjetnik_UlogaKorisnika">
+    <End Role="UlogaKorisnika" Type="Self.UlogaKorisnika" Multiplicity="1" />
+    <End Role="Odvjetnik" Type="Self.Odvjetnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UlogaKorisnika">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Odvjetnik">
+        <PropertyRef Name="Uloga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdvjetnikImaOvlastiNaSpisu_Odvjetnik">
+    <End Role="Odvjetnik" Type="Self.Odvjetnik" Multiplicity="1" />
+    <End Role="OdvjetnikImaOvlastiNaSpisu" Type="Self.OdvjetnikImaOvlastiNaSpisu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odvjetnik">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OdvjetnikImaOvlastiNaSpisu">
+        <PropertyRef Name="OdvjetnikID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdvjetnikStrankaImajuDogadaj_Odvjetnik">
+    <End Role="Odvjetnik" Type="Self.Odvjetnik" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OdvjetnikStrankaImajuDogadaj" Type="Self.OdvjetnikStrankaImajuDogadaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odvjetnik">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OdvjetnikStrankaImajuDogadaj">
+        <PropertyRef Name="OdvjetnikID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spis_Odvjetnik">
+    <End Role="Odvjetnik" Type="Self.Odvjetnik" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Spis" Type="Self.Spis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odvjetnik">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Spis">
+        <PropertyRef Name="KreiraoOdvjetnik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdvjetnikImaOvlastiNaSpisu_Ovlast">
+    <End Role="Ovlast" Type="Self.Ovlast" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OdvjetnikImaOvlastiNaSpisu" Type="Self.OdvjetnikImaOvlastiNaSpisu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ovlast">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OdvjetnikImaOvlastiNaSpisu">
+        <PropertyRef Name="OvlastID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdvjetnikImaOvlastiNaSpisu_Spis">
+    <End Role="Spis" Type="Self.Spis" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OdvjetnikImaOvlastiNaSpisu" Type="Self.OdvjetnikImaOvlastiNaSpisu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Spis">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OdvjetnikImaOvlastiNaSpisu">
+        <PropertyRef Name="SpisID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdvjetnikStrankaImajuDogadaj_Osoba">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OdvjetnikStrankaImajuDogadaj" Type="Self.OdvjetnikStrankaImajuDogadaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="OIB" />
+      </Principal>
+      <Dependent Role="OdvjetnikStrankaImajuDogadaj">
+        <PropertyRef Name="StrankaOIB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Osoba_TipOsobe">
+    <End Role="TipOsobe" Type="Self.TipOsobe" Multiplicity="0..1" />
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipOsobe">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Osoba">
+        <PropertyRef Name="TipOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spis_Osoba">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Spis" Type="Self.Spis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="OIB" />
+      </Principal>
+      <Dependent Role="Spis">
+        <PropertyRef Name="Stranka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spis_TipPostupka">
+    <End Role="TipPostupka" Type="Self.TipPostupka" Multiplicity="1" />
+    <End Role="Spis" Type="Self.Spis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipPostupka">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Spis">
+        <PropertyRef Name="TipPostupka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spis_TipSpisa">
+    <End Role="TipSpisa" Type="Self.TipSpisa" Multiplicity="1" />
+    <End Role="Spis" Type="Self.Spis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipSpisa">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Spis">
+        <PropertyRef Name="Tip" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InstitucijaImaKontakt">
+    <End Role="Institucija" Type="Self.Institucija" Multiplicity="*" />
+    <End Role="Kontakt" Type="Self.Kontakt" Multiplicity="*" />
+  </Association>
+  <Association Name="OdvjetnikImaDogadaj">
+    <End Role="Dogadaj" Type="Self.Dogadaj" Multiplicity="*" />
+    <End Role="Odvjetnik" Type="Self.Odvjetnik" Multiplicity="*" />
+  </Association>
+  <Association Name="OsobaImaEmail">
+    <End Role="Email" Type="Self.Email" Multiplicity="*" />
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="*" />
+  </Association>
+  <Association Name="OsobaImaTelefon">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="*" />
+    <End Role="Telefon" Type="Self.Telefon" Multiplicity="*" />
+  </Association>
+  <Association Name="SpisImaDogadaj">
+    <End Role="Dogadaj" Type="Self.Dogadaj" Multiplicity="*" />
+    <End Role="Spis" Type="Self.Spis" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="T10_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BankRacun" EntityType="Self.BankRacun" />
+    <EntitySet Name="Biljeske" EntityType="Self.Biljeske" />
+    <EntitySet Name="Dogadaj" EntityType="Self.Dogadaj" />
+    <EntitySet Name="Email" EntityType="Self.Email" />
+    <EntitySet Name="Faks" EntityType="Self.Faks" />
+    <EntitySet Name="Institucija" EntityType="Self.Institucija" />
+    <EntitySet Name="Kontakt" EntityType="Self.Kontakt" />
+    <EntitySet Name="Mjesto" EntityType="Self.Mjesto" />
+    <EntitySet Name="MjestoZaposlenja" EntityType="Self.MjestoZaposlenja" />
+    <EntitySet Name="Odvjetnik" EntityType="Self.Odvjetnik" />
+    <EntitySet Name="OdvjetnikImaOvlastiNaSpisu" EntityType="Self.OdvjetnikImaOvlastiNaSpisu" />
+    <EntitySet Name="OdvjetnikStrankaImajuDogadaj" EntityType="Self.OdvjetnikStrankaImajuDogadaj" />
+    <EntitySet Name="Osoba" EntityType="Self.Osoba" />
+    <EntitySet Name="Ovlast" EntityType="Self.Ovlast" />
+    <EntitySet Name="Spis" EntityType="Self.Spis" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Telefon" EntityType="Self.Telefon" />
+    <EntitySet Name="TipDogadaja" EntityType="Self.TipDogadaja" />
+    <EntitySet Name="TipInstitucije" EntityType="Self.TipInstitucije" />
+    <EntitySet Name="TipOsobe" EntityType="Self.TipOsobe" />
+    <EntitySet Name="TipPostupka" EntityType="Self.TipPostupka" />
+    <EntitySet Name="TipSpisa" EntityType="Self.TipSpisa" />
+    <EntitySet Name="Uloga" EntityType="Self.Uloga" />
+    <EntitySet Name="UlogaKontakta" EntityType="Self.UlogaKontakta" />
+    <EntitySet Name="UlogaKorisnika" EntityType="Self.UlogaKorisnika" />
+    <EntitySet Name="Zupanija" EntityType="Self.Zupanija" />
+    <AssociationSet Name="FK_MjestoZaposlenja_BankRacun" Association="Self.FK_MjestoZaposlenja_BankRacun">
+      <End Role="BankRacun" EntitySet="BankRacun" />
+      <End Role="MjestoZaposlenja" EntitySet="MjestoZaposlenja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Odvjetnik_Biljeske" Association="Self.FK_Odvjetnik_Biljeske">
+      <End Role="Biljeske" EntitySet="Biljeske" />
+      <End Role="Odvjetnik" EntitySet="Odvjetnik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dogadaj_TipDogadaja" Association="Self.FK_Dogadaj_TipDogadaja">
+      <End Role="TipDogadaja" EntitySet="TipDogadaja" />
+      <End Role="Dogadaj" EntitySet="Dogadaj" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdvjetnikStrankaImajuDogadaj_Dogadaj" Association="Self.FK_OdvjetnikStrankaImajuDogadaj_Dogadaj">
+      <End Role="Dogadaj" EntitySet="Dogadaj" />
+      <End Role="OdvjetnikStrankaImajuDogadaj" EntitySet="OdvjetnikStrankaImajuDogadaj" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Institucija_Mjesto" Association="Self.FK_Institucija_Mjesto">
+      <End Role="Mjesto" EntitySet="Mjesto" />
+      <End Role="Institucija" EntitySet="Institucija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Institucija_Mjesto1" Association="Self.FK_Institucija_Mjesto1">
+      <End Role="Mjesto" EntitySet="Mjesto" />
+      <End Role="Institucija" EntitySet="Institucija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Institucija_TipInstitucije" Association="Self.FK_Institucija_TipInstitucije">
+      <End Role="TipInstitucije" EntitySet="TipInstitucije" />
+      <End Role="Institucija" EntitySet="Institucija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spis_Institucija" Association="Self.FK_Spis_Institucija">
+      <End Role="Institucija" EntitySet="Institucija" />
+      <End Role="Spis" EntitySet="Spis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontakt_Uloga" Association="Self.FK_Kontakt_Uloga">
+      <End Role="Uloga" EntitySet="Uloga" />
+      <End Role="Kontakt" EntitySet="Kontakt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontakt_UlogaKontakta" Association="Self.FK_Kontakt_UlogaKontakta">
+      <End Role="UlogaKontakta" EntitySet="UlogaKontakta" />
+      <End Role="Kontakt" EntitySet="Kontakt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mjesto_Zupanija" Association="Self.FK_Mjesto_Zupanija">
+      <End Role="Zupanija" EntitySet="Zupanija" />
+      <End Role="Mjesto" EntitySet="Mjesto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Osoba_MjestoZaposlenja" Association="Self.FK_Osoba_MjestoZaposlenja">
+      <End Role="MjestoZaposlenja" EntitySet="MjestoZaposlenja" />
+      <End Role="Osoba" EntitySet="Osoba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Odvjetnik_UlogaKorisnika" Association="Self.FK_Odvjetnik_UlogaKorisnika">
+      <End Role="UlogaKorisnika" EntitySet="UlogaKorisnika" />
+      <End Role="Odvjetnik" EntitySet="Odvjetnik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdvjetnikImaOvlastiNaSpisu_Odvjetnik" Association="Self.FK_OdvjetnikImaOvlastiNaSpisu_Odvjetnik">
+      <End Role="Odvjetnik" EntitySet="Odvjetnik" />
+      <End Role="OdvjetnikImaOvlastiNaSpisu" EntitySet="OdvjetnikImaOvlastiNaSpisu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdvjetnikStrankaImajuDogadaj_Odvjetnik" Association="Self.FK_OdvjetnikStrankaImajuDogadaj_Odvjetnik">
+      <End Role="Odvjetnik" EntitySet="Odvjetnik" />
+      <End Role="OdvjetnikStrankaImajuDogadaj" EntitySet="OdvjetnikStrankaImajuDogadaj" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spis_Odvjetnik" Association="Self.FK_Spis_Odvjetnik">
+      <End Role="Odvjetnik" EntitySet="Odvjetnik" />
+      <End Role="Spis" EntitySet="Spis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdvjetnikImaOvlastiNaSpisu_Ovlast" Association="Self.FK_OdvjetnikImaOvlastiNaSpisu_Ovlast">
+      <End Role="Ovlast" EntitySet="Ovlast" />
+      <End Role="OdvjetnikImaOvlastiNaSpisu" EntitySet="OdvjetnikImaOvlastiNaSpisu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdvjetnikImaOvlastiNaSpisu_Spis" Association="Self.FK_OdvjetnikImaOvlastiNaSpisu_Spis">
+      <End Role="Spis" EntitySet="Spis" />
+      <End Role="OdvjetnikImaOvlastiNaSpisu" EntitySet="OdvjetnikImaOvlastiNaSpisu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdvjetnikStrankaImajuDogadaj_Osoba" Association="Self.FK_OdvjetnikStrankaImajuDogadaj_Osoba">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="OdvjetnikStrankaImajuDogadaj" EntitySet="OdvjetnikStrankaImajuDogadaj" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Osoba_TipOsobe" Association="Self.FK_Osoba_TipOsobe">
+      <End Role="TipOsobe" EntitySet="TipOsobe" />
+      <End Role="Osoba" EntitySet="Osoba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spis_Osoba" Association="Self.FK_Spis_Osoba">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="Spis" EntitySet="Spis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spis_TipPostupka" Association="Self.FK_Spis_TipPostupka">
+      <End Role="TipPostupka" EntitySet="TipPostupka" />
+      <End Role="Spis" EntitySet="Spis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spis_TipSpisa" Association="Self.FK_Spis_TipSpisa">
+      <End Role="TipSpisa" EntitySet="TipSpisa" />
+      <End Role="Spis" EntitySet="Spis" />
+    </AssociationSet>
+    <AssociationSet Name="InstitucijaImaKontakt" Association="Self.InstitucijaImaKontakt">
+      <End Role="Institucija" EntitySet="Institucija" />
+      <End Role="Kontakt" EntitySet="Kontakt" />
+    </AssociationSet>
+    <AssociationSet Name="OdvjetnikImaDogadaj" Association="Self.OdvjetnikImaDogadaj">
+      <End Role="Dogadaj" EntitySet="Dogadaj" />
+      <End Role="Odvjetnik" EntitySet="Odvjetnik" />
+    </AssociationSet>
+    <AssociationSet Name="OsobaImaEmail" Association="Self.OsobaImaEmail">
+      <End Role="Email" EntitySet="Email" />
+      <End Role="Osoba" EntitySet="Osoba" />
+    </AssociationSet>
+    <AssociationSet Name="OsobaImaTelefon" Association="Self.OsobaImaTelefon">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="Telefon" EntitySet="Telefon" />
+    </AssociationSet>
+    <AssociationSet Name="SpisImaDogadaj" Association="Self.SpisImaDogadaj">
+      <End Role="Dogadaj" EntitySet="Dogadaj" />
+      <End Role="Spis" EntitySet="Spis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

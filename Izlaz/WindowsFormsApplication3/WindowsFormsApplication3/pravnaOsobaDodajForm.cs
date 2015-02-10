@@ -20,6 +20,7 @@ namespace WindowsFormsApplication3
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+            //gumb za izlazak iz forme
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -33,6 +34,7 @@ namespace WindowsFormsApplication3
             {
                 errorProvider1.Clear();
             }
+            //provjera da li su unešeni samo brojevi u polje za oib
         }
     }
 }

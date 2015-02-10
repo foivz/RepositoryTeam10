@@ -24,17 +24,20 @@ namespace WindowsFormsApplication3
             dataGridView1.Columns["Uloga1"].Visible = false;
             dataGridView1.Columns["UlogaKontakta"].Visible = false;
             dataGridView1.Columns["Institucija"].Visible = false;
+            //prikaz kontakti u listi
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             DodajKontaktForm dodaj = new DodajKontaktForm();
             dodaj.ShowDialog();
+            //otvara formu za dodavanje novih kontakti
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();            
+            //zatvara, skriva, trenutnu formu
         }
     }
 }

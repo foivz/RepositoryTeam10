@@ -23,12 +23,14 @@ namespace WindowsFormsApplication3
             listBox1.DataSource = lista;
             listBox1.DisplayMember = "Naziv";
             listBox1.ValueMember = "ID";
+            //prikazuje podatke o ulogiranom korisniku, korisniku koji je kreirao spis i puni listbox s vrijednostima, odnosno spisima
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             SpisForm nova = new SpisForm(lista);
             nova.ShowDialog();
+            //instancira novu formu sa spisima
         }
 
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -37,11 +39,13 @@ namespace WindowsFormsApplication3
             {
                 Spisi.SpisDodaj novi = new Spisi.SpisDodaj((int)listBox1.SelectedValue);
                 novi.ShowDialog();
+                //prikazuje prozor za dodavanje novih spisa
             }
             catch (Exception)
             {
 
                 MessageBox.Show("Molimo odaberite spis koji želite urediti!");
+                //javlja pogresku ako nije odabran spis
             }
         }
 
@@ -49,11 +53,13 @@ namespace WindowsFormsApplication3
         {
             KontaktForm n = new KontaktForm();
             n.ShowDialog();
+            //instancira formu za prikaz kontakti
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Application.Exit();
+            //gumb za izlazak iz aplikacije
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -61,6 +67,7 @@ namespace WindowsFormsApplication3
             this.Hide();
             LoginForm login = new LoginForm();
             login.Show();
+            //gumb za odjavu korisnika, odnosno prikaz login forme
         }
     }
 }

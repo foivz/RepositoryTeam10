@@ -23,12 +23,14 @@ namespace WindowsFormsApplication3
             {
                 pravnaOsobaDodajForm dd = new pravnaOsobaDodajForm();
                 dd.ShowDialog();
+                //kod dodavanje novih osoba, ako je izabran checkbox, instancira se forma za dodavanje pravnih osoba
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+            //zatvaranje forme
         }
     }
 }

@@ -18,3 +18,23 @@ c:\users\mukepogatesu\documents\visual studio 2015\Projects\WindowsFormsApplicat
 c:\users\mukepogatesu\documents\visual studio 2015\Projects\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\MukePoGatesu\Documents\Visual Studio 2015\Projects\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.OsobaDodajForm.resources
 C:\Users\MukePoGatesu\Documents\Visual Studio 2015\Projects\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.pravnaOsobaDodajForm.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.exe.config
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.exe
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.pdb
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.exe
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.pdb
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\EntityFramework.dll
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\EntityFramework.xml
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.csprojResolveAssemblyReference.cache
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.DodajKontaktForm.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Form1.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.KontaktForm.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.LoginForm.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.OsobaDodajForm.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.pravnaOsobaDodajForm.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Properties.Resources.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.SpisForm.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Spisi.SpisDodaj.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Izlaz\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.csproj.GenerateResource.Cache

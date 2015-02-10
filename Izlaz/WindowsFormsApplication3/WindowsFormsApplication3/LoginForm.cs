@@ -24,5 +24,10 @@ namespace WindowsFormsApplication3
         {
             data.checkLoginData(maskedTextBox1.Text, textBox2.Text, this);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

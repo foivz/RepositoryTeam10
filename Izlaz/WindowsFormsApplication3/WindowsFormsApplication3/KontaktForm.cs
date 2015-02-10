@@ -31,5 +31,10 @@ namespace WindowsFormsApplication3
             DodajKontaktForm dodaj = new DodajKontaktForm();
             dodaj.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();            
+        }
     }
 }

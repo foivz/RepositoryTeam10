@@ -16,3 +16,6 @@ c:\users\mukepogatesu\documents\visual studio 2015\Projects\PI\PI\obj\Debug\PI.S
 c:\users\mukepogatesu\documents\visual studio 2015\Projects\PI\PI\obj\Debug\PI.TabPageUControl.resources
 c:\users\mukepogatesu\documents\visual studio 2015\Projects\PI\PI\obj\Debug\PI.KontaktiMainMenuForm.resources
 c:\users\mukepogatesu\documents\visual studio 2015\Projects\PI\PI\obj\Debug\PI.KontaktiUC.resources
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Projekt\PI\PI\bin\Debug\PI.exe.config
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Projekt\PI\PI\obj\Debug\PI.exe
+C:\Users\zoky\Documents\GitHub\RepositoryTeam10\Projekt\PI\PI\obj\Debug\PI.pdb

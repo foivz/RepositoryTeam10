@@ -50,17 +50,5 @@ namespace WindowsFormsApplication3
             KontaktForm n = new KontaktForm();
             n.ShowDialog();
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            LoginForm login = new LoginForm();
-            login.Show();
-        }
     }
 }

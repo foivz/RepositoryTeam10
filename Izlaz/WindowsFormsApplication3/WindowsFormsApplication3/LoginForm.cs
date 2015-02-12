@@ -18,19 +18,16 @@ namespace WindowsFormsApplication3
         {
             InitializeComponent();
             this.AcceptButton = button1;
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             data.checkLoginData(maskedTextBox1.Text, textBox2.Text, this);
-            //gum za login koji salje unesene podatke datamanipclass-u koji ih provjerava u bazi i omogucuje login
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            //gumb za izlazak iz aplikacije
         }
     }
 }

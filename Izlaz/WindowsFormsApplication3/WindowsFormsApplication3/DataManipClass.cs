@@ -23,20 +23,17 @@ namespace WindowsFormsApplication3
                 if (user == null)
                 {
                     System.Windows.Forms.MessageBox.Show("Pogrešno korisničko ime i/ili lozinka!", "Pogreška pri prijavi u sustav");
-                    //ukoliko se ne poklapa username i password, javlja pogresku
                 }
                 else
                 {
                     login.Hide();
                     Form1 nova = new Form1(user);
                     nova.Show();
-                    //ako je username i password tocan, skriva login formu i prikazuje glavnu formu
                 }
             }
             catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show("Greška pri spajanju na server, provjerite vezu s internetom!");
-                //ukoliko ne postoji internetska veza, nije moguće provjeriti podatke pa javlja grešku i nije moguće koristiti aplikaciju
             }
         }
 
@@ -44,7 +41,6 @@ namespace WindowsFormsApplication3
         {
             lista = (from a in db.Spis where a.KreiraoOdvjetnik == userID select a).ToList();
             return lista;
-            //vraca listu spisa za koje korisnik ima ovlasti da vidi (preko id korisnika)
         }
 
         public List<Spis> GetAllSpis()
@@ -52,7 +48,6 @@ namespace WindowsFormsApplication3
             List<Spis> lista = new List<Spis>();
             lista = db.Spis.ToList();
             return lista;
-            //vraca listu sa svim spisima
         }
         
         public List<Uloga> GetUlogaList()
@@ -60,21 +55,18 @@ namespace WindowsFormsApplication3
             List<Uloga> lista = new List<Uloga>();
             lista = db.Uloga.ToList();
             return lista;
-            // puni listu sa svim ulogama 
         }
         public List<UlogaKontakta> GetUlogaKontaktaList()
         {
             List<UlogaKontakta> lista = new List<UlogaKontakta>();
             lista = db.UlogaKontakta.ToList();
             return lista;
-            //puni listu sa svim ulogama kontakta
         }
         public List<UlogaKorisnika> GetUlogaKorisnikaList()
         {
             List<UlogaKorisnika> lista = new List<UlogaKorisnika>();
             lista = db.UlogaKorisnika.ToList();
             return lista;
-            //puni listu s ulogama korisnika
         }
 
         public Spis GetSpisByID(int ID)
@@ -82,7 +74,6 @@ namespace WindowsFormsApplication3
             Spis novi = new Spis();
             novi = db.Spis.SingleOrDefault(e => e.ID == ID);
             return novi;
-            //vraca spise po id-u
         }
 
         public List<TipSpisa> GetTipSpisaList()
@@ -90,7 +81,6 @@ namespace WindowsFormsApplication3
             List<TipSpisa> lista = new List<TipSpisa>();
             lista = db.TipSpisa.ToList();
             return lista;
-            //vraca tip spisa
         }
     }
 }

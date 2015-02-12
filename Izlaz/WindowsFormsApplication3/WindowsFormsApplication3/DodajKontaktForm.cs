@@ -24,7 +24,6 @@ namespace WindowsFormsApplication3
             comboBox1.DataSource = uloga;
             comboBox1.DisplayMember = "Naziv";
             comboBox2.ValueMember = "ID";
-            //puni combobox sa ulogom kontakta i nazivima institucije kontakta koji se povlace iz baze preko id-a 
         }
 
         private void maskedTextBox2_Leave(object sender, EventArgs e)
@@ -50,7 +49,6 @@ namespace WindowsFormsApplication3
                 button1.Enabled = false;
                 maskedTextBox2.ForeColor = Color.Red;
             }
-            //provjerava da li je unešena e-mail adresa, ukoliko nije text je crven i javlja pogrešku
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,25 +57,14 @@ namespace WindowsFormsApplication3
             Regex novi = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             Match rez = novi.Match(maskedTextBox2.Text);
             if (rez.Success)
-            {                
-                DialogResult dialogResult = MessageBox.Show(this, "Jeste li sigurni da želite spremiti kontakt?", "Spremanje kontakta", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    //spremi kontakt
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    this.Close();
-                    //odustajanje od novog kontakta
-                }
+            {
+                MessageBox.Show(this, "Jeste li sigurni da želite spremiti kontakt?", "Spremanje kontakta");
             }
-                //unošenje podataka novog korisnika i poruka da li korisnik želi spremiti novi kontakt
             else
             {
                 ToolTip toltip = new ToolTip();
                 toltip.Show("Nije email adresa", maskedTextBox1, maskedTextBox1.Location, 3000);
                 maskedTextBox2.BackColor = Color.Red;
-                //provjerava da li je unešena e-mail adresa, ukoliko nije text je crven i javlja pogrešku
             }
 
         }
@@ -85,7 +72,6 @@ namespace WindowsFormsApplication3
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            //zatvara formu
         }
 
         public void provjeriTxt()
@@ -110,7 +96,8 @@ namespace WindowsFormsApplication3
                     }
                 }
             }
-            //provjera da li su određena polja ostala prazna
+            
+            
         }
     }
 }

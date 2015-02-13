@@ -29,3 +29,6 @@ C:\Users\MukePoGatesu\documents\visual studio 2015\Projects\PIProjektFinal\PIPro
 C:\Users\MukePoGatesu\documents\visual studio 2015\Projects\PIProjektFinal\PIProjektFinal\obj\Debug\PIProjektFinal.WizardDodajDogadaj.PovezanostSpisDog.resources
 C:\Users\MukePoGatesu\Documents\Visual Studio 2015\Projects\PIProjektFinal\PIProjektFinal\obj\Debug\PIProjektFinal.DogadajMainForm.resources
 C:\Users\MukePoGatesu\Documents\Visual Studio 2015\Projects\PIProjektFinal\PIProjektFinal\obj\Debug\PIProjektFinal.KontaktiForm.resources
+C:\Users\MukePoGatesu\Documents\GitHub\RepositoryTeam10\Projekt\PIProjektFinal\PIProjektFinal\bin\Debug\PIProjektFinal.exe.config
+C:\Users\MukePoGatesu\Documents\GitHub\RepositoryTeam10\Projekt\PIProjektFinal\PIProjektFinal\obj\Debug\PIProjektFinal.exe
+C:\Users\MukePoGatesu\Documents\GitHub\RepositoryTeam10\Projekt\PIProjektFinal\PIProjektFinal\obj\Debug\PIProjektFinal.pdb

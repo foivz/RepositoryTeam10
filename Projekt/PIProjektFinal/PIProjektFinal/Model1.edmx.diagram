@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e9ff5f82795d498ab153534d213f889e" Name="Diagram1">
+        <EntityTypeShape EntityType="T10_DBModel.Dogadaj" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Institucija" Width="1.5" PointX="10" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Kontakt" Width="1.5" PointX="12.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Korisnik" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.OdvjetnikStrankaImajuDogadaj" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Osoba" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.Spis" Width="1.5" PointX="10.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.StatusOsobe" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.sysdiagrams" Width="1.5" PointX="12.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.TipDogadaja" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.TipInstitucije" Width="1.5" PointX="7.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.TipOsobe" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.TipPostupka" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.UlogaKontakta" Width="1.5" PointX="10" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="T10_DBModel.UlogaKorisnika" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="T10_DBModel.FK_Dogadaj_TipDogadaja" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_OdvjetnikStrankaImajuDogadaj_Dogadaj" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Institucija_TipInstitucije" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Kontakt_UlogaKontakta" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Korisnik_UlogaKorisnika" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_OdvjetnikStrankaImajuDogadaj_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_OdvjetnikStrankaImajuDogadaj_Osoba" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Osoba_StatusOsobe" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Osoba_TipOsobe" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_Osoba" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_Osoba1" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_TipPostupka" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.InstitucijaImaKontakt" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.OdvjetnikImaDogadaj" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.SpisImaDogadaj" ManuallyRouted="false" />
+        <AssociationConnector Association="T10_DBModel.FK_Spis_Kontakt" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

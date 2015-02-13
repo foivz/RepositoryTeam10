@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="T10_DBModelStoreContainer" CdmEntityContainer="T10_DBEntities">
+    <EntitySetMapping Name="Dogadaj">
+      <EntityTypeMapping TypeName="T10_DBModel.Dogadaj">
+        <MappingFragment StoreEntitySet="Dogadaj">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Pocetak" ColumnName="Pocetak" />
+          <ScalarProperty Name="Zavrsetak" ColumnName="Zavrsetak" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+          <ScalarProperty Name="TipDogadaja" ColumnName="TipDogadaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Institucija">
+      <EntityTypeMapping TypeName="T10_DBModel.Institucija">
+        <MappingFragment StoreEntitySet="Institucija">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="TipInstitucije" ColumnName="TipInstitucije" />
+          <ScalarProperty Name="Faks" ColumnName="Faks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kontakt">
+      <EntityTypeMapping TypeName="T10_DBModel.Kontakt">
+        <MappingFragment StoreEntitySet="Kontakt">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Uloga" ColumnName="Uloga" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisnik">
+      <EntityTypeMapping TypeName="T10_DBModel.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Uloga" ColumnName="Uloga" />
+          <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="TelefonGlavni" ColumnName="TelefonGlavni" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OdvjetnikStrankaImajuDogadaj">
+      <EntityTypeMapping TypeName="T10_DBModel.OdvjetnikStrankaImajuDogadaj">
+        <MappingFragment StoreEntitySet="OdvjetnikStrankaImajuDogadaj">
+          <ScalarProperty Name="StrankaOIB" ColumnName="StrankaOIB" />
+          <ScalarProperty Name="OdvjetnikID" ColumnName="OdvjetnikID" />
+          <ScalarProperty Name="DogadajID" ColumnName="DogadajID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Osoba">
+      <EntityTypeMapping TypeName="T10_DBModel.Osoba">
+        <MappingFragment StoreEntitySet="Osoba">
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="Faks" ColumnName="Faks" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="OIB" ColumnName="OIB" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="StatusOsobe" ColumnName="StatusOsobe" />
+          <ScalarProperty Name="TipOsobe" ColumnName="TipOsobe" />
+          <ScalarProperty Name="Racun" ColumnName="Racun" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spis">
+      <EntityTypeMapping TypeName="T10_DBModel.Spis">
+        <MappingFragment StoreEntitySet="Spis">
+          <ScalarProperty Name="Arhiviran" ColumnName="Arhiviran" />
+          <ScalarProperty Name="NadlezniSudac" ColumnName="NadlezniSudac" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="TipPostupka" ColumnName="TipPostupka" />
+          <ScalarProperty Name="Biljeska" ColumnName="Biljeska" />
+          <ScalarProperty Name="NadlezniSud" ColumnName="NadlezniSud" />
+          <ScalarProperty Name="DatumPocetka" ColumnName="DatumPocetka" />
+          <ScalarProperty Name="DatumZavrsetak" ColumnName="DatumZavrsetak" />
+          <ScalarProperty Name="DatumZastare" ColumnName="DatumZastare" />
+          <ScalarProperty Name="Stranka" ColumnName="Stranka" />
+          <ScalarProperty Name="Protustranka" ColumnName="Protustranka" />
+          <ScalarProperty Name="KreiraoOdvjetnik" ColumnName="KreiraoOdvjetnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusOsobe">
+      <EntityTypeMapping TypeName="T10_DBModel.StatusOsobe">
+        <MappingFragment StoreEntitySet="StatusOsobe">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="T10_DBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipDogadaja">
+      <EntityTypeMapping TypeName="T10_DBModel.TipDogadaja">
+        <MappingFragment StoreEntitySet="TipDogadaja">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipInstitucije">
+      <EntityTypeMapping TypeName="T10_DBModel.TipInstitucije">
+        <MappingFragment StoreEntitySet="TipInstitucije">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipOsobe">
+      <EntityTypeMapping TypeName="T10_DBModel.TipOsobe">
+        <MappingFragment StoreEntitySet="TipOsobe">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipPostupka">
+      <EntityTypeMapping TypeName="T10_DBModel.TipPostupka">
+        <MappingFragment StoreEntitySet="TipPostupka">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UlogaKontakta">
+      <EntityTypeMapping TypeName="T10_DBModel.UlogaKontakta">
+        <MappingFragment StoreEntitySet="UlogaKontakta">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UlogaKorisnika">
+      <EntityTypeMapping TypeName="T10_DBModel.UlogaKorisnika">
+        <MappingFragment StoreEntitySet="UlogaKorisnika">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="InstitucijaImaKontakt" TypeName="T10_DBModel.InstitucijaImaKontakt" StoreEntitySet="InstitucijaImaKontakt">
+      <EndProperty Name="Institucija">
+        <ScalarProperty Name="ID" ColumnName="InstitucijaID" />
+      </EndProperty>
+      <EndProperty Name="Kontakt">
+        <ScalarProperty Name="ID" ColumnName="KontaktID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OdvjetnikImaDogadaj" TypeName="T10_DBModel.OdvjetnikImaDogadaj" StoreEntitySet="OdvjetnikImaDogadaj">
+      <EndProperty Name="Dogadaj">
+        <ScalarProperty Name="ID" ColumnName="DogadajID" />
+      </EndProperty>
+      <EndProperty Name="Korisnik">
+        <ScalarProperty Name="ID" ColumnName="OdvjetnikID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SpisImaDogadaj" TypeName="T10_DBModel.SpisImaDogadaj" StoreEntitySet="SpisImaDogadaj">
+      <EndProperty Name="Dogadaj">
+        <ScalarProperty Name="ID" ColumnName="DogadajID" />
+      </EndProperty>
+      <EndProperty Name="Spis">
+        <ScalarProperty Name="ID" ColumnName="SpisID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
